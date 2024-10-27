@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:56:44 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:56:45 by mel-abde         ###   ########.fr       */
+/*   Created: 2024/10/25 11:09:43 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/26 11:00:15 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char *strchr(const char *s, int c)
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') 
+		|| (c >= '0' && c <= '9'))
 	{
-		if (s[i] == (char) c)
-		{
-			return (char *) (s + i);
-		}
-		i++;
+		return (1);
 	}
-	if (s[i] == (char) c)
-	{
-		return (char *) (s + i);
-	}
-	return (NULL);
+	return (0);
 }

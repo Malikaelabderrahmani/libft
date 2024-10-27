@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:56:44 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:56:45 by mel-abde         ###   ########.fr       */
+/*   Created: 2024/10/25 11:34:17 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/25 11:38:59 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char *strchr(const char *s, int c)
+int	ft_isascii(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
+	if (c >= 0 && c <= 127)
 	{
-		if (s[i] == (char) c)
-		{
-			return (char *) (s + i);
-		}
-		i++;
+		return (1);
 	}
-	if (s[i] == (char) c)
-	{
-		return (char *) (s + i);
-	}
-	return (NULL);
+	return (0);
 }

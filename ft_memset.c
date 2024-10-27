@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:56:44 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:56:45 by mel-abde         ###   ########.fr       */
+/*   Created: 2024/10/25 13:10:15 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/25 19:11:55 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-
-char *strchr(const char *s, int c)
+#include <stdio.h>
+void *ft_memset(void *b, int c, size_t len)
 {
-	int	i;
-
+	size_t	i;
+	unsigned char *pt;
+	
+	pt = (unsigned char *)b;
 	i = 0;
-	while (s[i])
+	while (len > 0)
 	{
-		if (s[i] == (char) c)
-		{
-			return (char *) (s + i);
-		}
-		i++;
+		pt[i] = (unsigned char) c;
+		len--;
+		i++;	
 	}
-	if (s[i] == (char) c)
-	{
-		return (char *) (s + i);
-	}
-	return (NULL);
+	return (b);
 }
+#include <stdio.h>
+
+int main() {
+    int b;
+	b = 0 ;
+	// 560 = 10   00110000;
+
+   //printf("%d",b);
+	printf("%d",*(int *)memset(&b, -8 ,1 ));
+    return 0;
+}
+
+

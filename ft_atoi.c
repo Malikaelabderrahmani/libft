@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:56:44 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:56:45 by mel-abde         ###   ########.fr       */
+/*   Created: 2024/10/27 10:00:05 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/27 10:17:48 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char *strchr(const char *s, int c)
+int	ft_atoi(const char *str)
 {
+	int	nb;
 	int	i;
-
+	int	flag;
+	
+	nb = 0;
 	i = 0;
-	while (s[i])
+	flag = 1;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		if (s[i] == (char) c)
+		if(str[i] == '-')
 		{
-			return (char *) (s + i);
+			flag = flag * (-1);
 		}
 		i++;
 	}
-	if (s[i] == (char) c)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		return (char *) (s + i);
+		nb = (nb * 10) + (str[i] - '0');
+		i++;
 	}
-	return (NULL);
+	return (flag*nb);
+}
+
+int main ()
+{
+	printf ("%d\n", ft_atoi("1231234567890"));
+	printf ("%d", atoi("1231234567890"));
+	return (0);
 }

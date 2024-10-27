@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:56:44 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:56:45 by mel-abde         ###   ########.fr       */
+/*   Created: 2024/10/25 19:52:11 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/26 09:57:11 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char *strchr(const char *s, int c)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
+	if (c >= 'a' && c <= 'z')
 	{
-		if (s[i] == (char) c)
-		{
-			return (char *) (s + i);
-		}
-		i++;
+		c = c - ('a' - 'A');
 	}
-	if (s[i] == (char) c)
-	{
-		return (char *) (s + i);
-	}
-	return (NULL);
+	return (c);
 }

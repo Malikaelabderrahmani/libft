@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:56:44 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:56:45 by mel-abde         ###   ########.fr       */
+/*   Created: 2024/10/22 11:28:55 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/26 10:58:08 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char *strchr(const char *s, int c)
+int	ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
+	if (c >= '0' && c <= '9')
 	{
-		if (s[i] == (char) c)
-		{
-			return (char *) (s + i);
-		}
-		i++;
+		return (1);
 	}
-	if (s[i] == (char) c)
-	{
-		return (char *) (s + i);
-	}
-	return (NULL);
+	return (0);
 }

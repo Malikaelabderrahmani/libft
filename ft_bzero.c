@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:56:44 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:56:45 by mel-abde         ###   ########.fr       */
+/*   Created: 2024/10/25 19:15:35 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/26 19:08:18 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char *strchr(const char *s, int c)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	unsigned char	*pt;
+	size_t	i;
 
 	i = 0;
-	while (s[i])
+	pt = (unsigned char *) s;
+	while (n > 0)
 	{
-		if (s[i] == (char) c)
-		{
-			return (char *) (s + i);
-		}
+		pt[i] = 0;
 		i++;
+		n--;
 	}
-	if (s[i] == (char) c)
-	{
-		return (char *) (s + i);
-	}
-	return (NULL);
+}
+int main()
+{
+	char s[6] = "hello";
+	printf("%s\n", s);
+	ft_bzero(s, 0);
+	printf("%s", s);
+	return 0;
 }

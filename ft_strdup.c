@@ -1,22 +1,56 @@
-#include <stdlib.h>
-char *ft_strdup(char *ch)
-{
-	int	i;
-	char	*s;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/27 20:14:25 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/27 20:20:12 by mel-abde         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stddef.h>
+#include <stdio.h>
+
+char	*ft_strdup(const char *s1)
+{
+	char	*p;
+	size_t	i;
+	
 	i = 0;
-	while (ch[i] != '\0')
+	while(s1[i])
 	{
 		i++;
 	}
-	s = malloc(sizeof(char) * (i + 1))
+	p = malloc(i+1);
 	i = 0;
-	while (ch[i] != '\0')
+	while(s1[i])
 	{
-		s[i] = ch[i];
+		p[i] = s1[i];
 		i++;
 	}
-	s[i] = '\0';
-	return (s);
+	p[i] = '\0';
+	return (p);
 }
 
+int main() {
+    const char *original = "Hello, World!"; // Chaîne d'origine
+    char *duplicate = ft_strdup(original); // Appel à strdup
+
+    // Vérification de l'allocation
+    if (duplicate == NULL) {
+        fprintf(stderr, "Échec de l'allocation mémoire.\n");
+        return 1;
+    }
+
+    // Affichage des chaînes
+    printf("Chaîne d'origine : %s\n", original);
+    printf("Chaîne dupliquée : %s\n", duplicate);
+
+    // Libération de la mémoire
+    free(duplicate);
+    
+    return 0;
+}

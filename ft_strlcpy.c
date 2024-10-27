@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 10:56:44 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:56:45 by mel-abde         ###   ########.fr       */
+/*   Created: 2024/10/25 19:35:13 by mel-abde          #+#    #+#             */
+/*   Updated: 2024/10/25 19:46:19 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char *strchr(const char *s, int c)
+ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
+	size_t	i;
+	size_t len;
 
 	i = 0;
-	while (s[i])
+	len = 0;
+	while(src[len])
 	{
-		if (s[i] == (char) c)
-		{
-			return (char *) (s + i);
-		}
+		len++;
+	}
+	while (dstsize - 1 > i)
+	{
+		dst[i] = src[i];
 		i++;
 	}
-	if (s[i] == (char) c)
-	{
-		return (char *) (s + i);
-	}
-	return (NULL);
+	dst[i] = '\0';
+	return (len);
 }
