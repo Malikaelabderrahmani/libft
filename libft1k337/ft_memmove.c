@@ -37,17 +37,18 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);	
 }
+/*
 int main()
 {
 	char s1[] = "Hello world!";
 	char s2[] = "Hello world!";
 	printf("%s\n", ft_memmove(s1, s1+5, 12));
 	printf("%s", memmove(s2, s2+5, 12));
-	/*char s1[] = "hello";
+	char s1[] = "hello";
     char *s2 = "hey";
     char s3[] = "hello";
     char *s4 = "hey";
     printf("%s\n", memmove(s1, s2, 12));
-    printf("%s", ft_memmove(s3, s4, 12));*/
+    printf("%s", ft_memmove(s3, s4, 12));
 	return 0;
-}
+}*/

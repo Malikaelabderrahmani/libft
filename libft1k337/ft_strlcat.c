@@ -24,21 +24,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	ldst = 0;
 	lsrc = 0;
 	while (src[lsrc])
-	{
 		lsrc++;
-	}
 	if (dstsize == 0)
-	{
 		return (lsrc);
-	}
 	while (dst[ldst])
-	{
 		ldst++;
-	}
 	if (ldst >= dstsize)
-	{
 		return (dstsize + lsrc);
-	}
 	i = ldst;
 	while (i < dstsize - 1)
 	{
@@ -52,6 +44,6 @@ int main()
 {
 	//char s1[20] = "hello";
 	char *src = " world!";
-	//printf("%zu\n", ft_strlcat(NULL, src, 0));
-	printf("%lu\n", strlcat(NULL, src, 0));
+	printf("%zu\n", ft_strlcat(NULL, src, 0));
+	//printf("%lu\n", strlcat(NULL, src, 0));
 }
