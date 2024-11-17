@@ -6,17 +6,18 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 13:02:31 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/11/09 13:04:41 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:02:39 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	if (s == NULL)
+		return ;
 	i = 0;
 	while (s[i])
 	{

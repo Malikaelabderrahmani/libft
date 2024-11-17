@@ -6,49 +6,36 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 12:12:54 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/11/08 15:49:19 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/17 11:46:43 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	unsigned char *d;
-	const unsigned char *s;
-	unsigned char tmp[len];
+	size_t				i;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	i = 0;
-	d = (unsigned char *) dst;
-	s = (unsigned char *) src;
-	while (len > i)
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	if ((d == NULL && len == 0) || (d == NULL && s == NULL))
+		return (NULL);
+	i = len;
+	if (s < d)
 	{
-		tmp[i] = s[i];
-		i++;
+		while (i > 0)
+		{
+			i--;
+			d[i] = s[i];
+		}
 	}
-	i = 0;
-	while (len > i)
+	else
 	{
-		d[i] = tmp[i];
-		i++;
+		i = 0;
+		while (i++ < len)
+			d[i - 1] = s[i - 1];
 	}
-	return (dst);	
+	return (dst);
 }
-/*
-int main()
-{
-	char s1[] = "Hello world!";
-	char s2[] = "Hello world!";
-	printf("%s\n", ft_memmove(s1, s1+5, 12));
-	printf("%s", memmove(s2, s2+5, 12));
-	char s1[] = "hello";
-    char *s2 = "hey";
-    char s3[] = "hello";
-    char *s4 = "hey";
-    printf("%s\n", memmove(s1, s2, 12));
-    printf("%s", ft_memmove(s3, s4, 12));
-	return 0;
-}*/

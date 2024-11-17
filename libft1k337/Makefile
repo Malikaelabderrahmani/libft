@@ -1,28 +1,50 @@
-NAME = program
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/17 12:49:07 by mel-abde          #+#    #+#              #
+#    Updated: 2024/11/17 13:41:57 by mel-abde         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = libft.a
 CC = cc
 CFLAGS = -Wextra -Wall -Werror
-SRC = $(wildcard ft_*.c)
-OBJ = $(SRC:.c=.o)
+SRC1 = ft_isalpha.c ft_isdigit.c ft_isprint.c ft_isascii.c ft_isalnum.c \
+		ft_toupper.c ft_tolower.c ft_strlen.c ft_atoi.c ft_strncmp.c ft_memcmp.c \
+		ft_strdup.c ft_strchr.c ft_strrchr.c ft_strnstr.c ft_bzero.c ft_memset.c \
+		ft_memchr.c ft_memcpy.c ft_memmove.c ft_calloc.c ft_strlcpy.c ft_strlcat.c \
+		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
+		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
 
-# Règle par défaut
-all: $(NAME)
+SRCB = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
 
-# Lier les fichiers objets pour créer l'exécutable
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+OBJ1 = $(SRC1:.c=.o)
 
-# Règle pour compiler les fichiers .c en .o, avec dépendance sur libft.h
+OBJB = $(SRCB:.c=.o)
+
+all : $(NAME)
+
+$(NAME): $(OBJ1)
+	ar rcs $(NAME) $(OBJ1)
+
+bonus: $(OBJB)
+	ar rcs $(NAME) $(OBJB)
+
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Nettoyage des fichiers objets
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ1)
 
-# Nettoyage complet (objets et exécutable)
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
-# Recompiler tout à partir de zéro
 re: fclean all
 
+.PHONY: clean fclean re bonus

@@ -6,11 +6,11 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 10:57:18 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/10/26 10:57:19 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/17 11:57:16 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{

@@ -6,64 +6,45 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 09:44:25 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/11/06 13:30:39 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:21:54 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned	int	i;
-	unsigned	int	j;
-	unsigned	int k;
-	
-	char	*p;
+	unsigned int	i;
+	unsigned int	slen;
+	char			*p;
 
 	i = 0;
-	j = start;
-	k = 0;
-	if(s == NULL)
-	{
+	slen = 0;
+	if (s == NULL)
 		return (NULL);
-	}
-    while(s[k])
-    {
-      k++;
-    }
-    if (k < start)
-    {
-      return (NULL);
-    }
-	while (s[j] && start < len)
-	{
-		j++;
-		i++;	
-	}
-	if (i < len)
-	{
-		len = i;
-	}
+	while (s[slen])
+		slen++;
+	if (slen < start)
+		return (ft_calloc(1, 1));
+	if (len > slen - start)
+		len = slen - start;
 	p = malloc(len + 1);
 	if (p == NULL)
 		return (NULL);
-	i = 0;
 	while (i < len && s[start])
 	{
 		p[i] = s[start];
 		i++;
 		start++;
 	}
-	p[i] = '\0';
+	p[len] = '\0';
 	return (p);
 }
-int	 main()
-{
-	//char *s = "hello world!";
-	char *p = ft_substr(NULL, 2, 15);
-	printf("%s", p);
-	return 0;
-	
-}
+
+// int main ()
+// {
+// 	char *s = "hello guys";
+// 	char *p;
+// 	p = ft_substr(s, 3, 4);
+// 	printf("%s", p);
+// }
