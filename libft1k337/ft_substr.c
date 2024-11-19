@@ -6,7 +6,7 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 09:44:25 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/11/17 19:21:54 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:07:29 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	p[len] = '\0';
 	return (p);
 }
-
-// int main ()
-// {
-// 	char *s = "hello guys";
-// 	char *p;
-// 	p = ft_substr(s, 3, 4);
-// 	printf("%s", p);
-// }

@@ -6,9 +6,11 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 11:09:43 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/11/17 17:38:54 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/17 11:42:54 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
@@ -17,5 +19,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-
-

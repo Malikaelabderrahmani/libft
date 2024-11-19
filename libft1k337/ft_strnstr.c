@@ -6,7 +6,7 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:29:57 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/11/17 19:07:39 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:04:52 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-// int main()
-// {
-// 	char *s1 = "heyyhello";
-// 	char *s2 = "hey";
-// 	char *ch = strnstr(NULL, s2, 0);
-// 	//char *ch = strnstr(NULL, NULL, 0);
-// 	printf("%s", ch);
-// }

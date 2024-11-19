@@ -40,12 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ch[len_s1] = '\0';
 	return (ch);
 }
-/*
-int main()
-{
-	char *s1 = "HEY HEY HEY";
-	char *s2 = "   :;;;world!";
-	char *s = ft_strjoin(s1, s2);
-	printf("%s", s);
-	return (0);
-}*/

@@ -38,11 +38,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (lsrc + ldst);
 }
-/*
-int main()
-{
-	//char s1[20] = "hello";
-	char *src = " world!";
-	//printf("%zu\n", ft_strlcat(NULL, src, 0));
-	printf("%lu\n", strlcat(NULL, src, 0));
-}*/

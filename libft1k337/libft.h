@@ -6,16 +6,14 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 11:52:17 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/11/17 16:12:40 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:46:55 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+# define LIBFT_H
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

@@ -93,33 +93,3 @@ char	**ft_split(const char *s, char c)
 	ch[h] = NULL;
 	return (ch);
 }
-
-// int main() {
-//     char *s = "hello       my friend    h   ow are you";
-//     char **ch;
-//     int i, j;
-
-//     ch = ft_split(s, ' ');
-//     if (ch == NULL) {
-//         printf("Erreur d'allocation ou chaîne vide.\n");
-//         return (1);
-//     }
-//     i = 0;
-//     while (ch[i] != NULL) {
-//         j = 0;
-//         while (ch[i][j]) {
-//             printf("%c", ch[i][j]);
-//             j++;
-//         }
-//         printf("\n");
-//         i++;
-//     }
-
-//     i = 0;
-//     while (ch[i] != NULL) {
-//         free(ch[i]);
-//         i++;
-//     }
-//     free(ch);
-//     return (0);
-// }

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-//#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -28,14 +27,4 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-/*#include <stdio.h>
 
-int main() {
-    int b;
-	b = 0 ;
-	// 560 = 10   00110000;
-
-   //printf("%d",b);
-	printf("%d",*(int *)memset(&b, -8 ,1 ));
-    return 0;
-}*/

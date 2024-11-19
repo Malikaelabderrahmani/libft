@@ -6,17 +6,12 @@
 /*   By: mel-abde <mel-abde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:16:23 by mel-abde          #+#    #+#             */
-/*   Updated: 2024/11/17 19:08:54 by mel-abde         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:06:48 by mel-abde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
+#include "libft.h"
 
-/*void	test(unsigned int i, char *c)
-{
-	*c = *c + i;
-}*/
 void	ft_striteri(char *s, void (*f)(unsigned	int, char *))
 {
 	unsigned int	i;
@@ -30,12 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned	int, char *))
 		i++;
 	}
 }
-/*
-int	main()
-{
-	char *ch = NULL;
-	void (*pt)(unsigned int, char *);
-	pt = test;
-	ft_striteri(ch, pt);
-	printf("%s", ch);	
-}*/

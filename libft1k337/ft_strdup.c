@@ -32,22 +32,3 @@ char	*ft_strdup(const char *s1)
 	p[i] = '\0';
 	return (p);
 }
-/*int main() {
-    const char *original = "Hello, World!"; // Chaîne d'origine
-    char *duplicate = ft_strdup(original); // Appel à strdup
-
-    // Vérification de l'allocation
-    if (duplicate == NULL) {
-        fprintf(stderr, "Échec de l'allocation mémoire.\n");
-        return 1;
-    }
-
-    // Affichage des chaînes
-    printf("Chaîne d'origine : %s\n", original);
-    printf("Chaîne dupliquée : %s\n", duplicate);
-
-    // Libération de la mémoire
-    free(duplicate);
-    
-    return 0;
-}*/

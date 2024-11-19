@@ -33,18 +33,18 @@ all : $(NAME)
 $(NAME): $(OBJ1)
 	ar rcs $(NAME) $(OBJ1)
 
-bonus: $(OBJB)
+bonus: $(OBJB) 
 	ar rcs $(NAME) $(OBJB)
 
 %.o: %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ1)
+	rm -f $(OBJ1) $(OBJB)
 
 fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean re bonus
+.PHONY: clean fclean re
